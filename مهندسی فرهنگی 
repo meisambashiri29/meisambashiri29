@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اینفوگرافیک: برش استانی نقشه مهندسی فرهنگی کرمانشاه</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .flowchart-step {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        .flowchart-step::before {
+            content: '';
+            position: absolute;
+            right: 1.2rem;
+            top: 2.2rem;
+            bottom: -1.5rem;
+            width: 2px;
+            background-color: #118AB2;
+        }
+        .flowchart-step:last-child::before {
+            display: none;
+        }
+        .flowchart-step::after {
+            content: '◄';
+            position: absolute;
+            right: 0.5rem;
+            top: 0.8rem;
+            color: #118AB2;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#073B4C] text-gray-200">
+
+    <header class="bg-[#118AB2] text-white p-6 shadow-lg text-center">
+        <h1 class="text-3xl md:text-4xl font-bold">برش استانی نقشه مهندسی فرهنگی کرمانشاه</h1>
+        <p class="mt-2 text-lg">یک اینفوگرافیک جامع برای تحلیل، برنامه‌ریزی و راهبردهای فرهنگی استان</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="swot" class="my-8">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#FFD166]">تحلیل وضعیت فرهنگی استان (SWOT)</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-gray-300">
+                شناخت دقیق نقاط قوت، ضعف‌ها، فرصت‌ها و تهدیدهای فرهنگی، زیربنای هر برنامه‌ریزی مؤثری است. استان کرمانشاه با پیشینه‌ای غنی، با مجموعه‌ای از پتانسیل‌ها و چالش‌ها روبروست که در ادامه به تفکیک آمده‌اند.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6 border-t-4 border-[#06D6A0]">
+                    <h3 class="text-xl font-bold text-[#06D6A0] mb-4 flex items-center gap-2">
+                        <span class="text-3xl">👍</span> نقاط قوت
+                    </h3>
+                    <ul class="space-y-3 text-gray-300 list-inside">
+                        <li>تاریخ و تمدن غنی و آثار باستانی</li>
+                        <li>تنوع اقوام و فرهنگ‌ها با همزیستی مسالمت‌آمیز</li>
+                        <li>فرهنگ ریشه‌دار ایثار و شهادت</li>
+                        <li>سابقه درخشان در هنر، ادب و موسیقی مقامی</li>
+                        <li>وجود مفاخر و مشاهیر برجسته</li>
+                        <li>اعتقادات قوی دینی و مذهبی</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6 border-t-4 border-[#FF6B6B]">
+                    <h3 class="text-xl font-bold text-[#FF6B6B] mb-4 flex items-center gap-2">
+                        <span class="text-3xl">📉</span> چالش‌ها و تهدیدها
+                    </h3>
+                    <ul class="space-y-3 text-gray-300 list-inside">
+                        <li>تهاجم فرهنگی و نفوذ رسانه‌های بیگانه</li>
+                        <li>تأثیر مشکلات اقتصادی بر مشارکت فرهنگی</li>
+                        <li>کاهش گرایش به ارزش‌های بومی در نسل جوان</li>
+                        <li>کمبود زیرساخت‌های فرهنگی و هنری</li>
+                        <li>مهاجرت و تغییرات ساختار جمعیتی</li>
+                        <li>ضعف در بازاریابی ظرفیت‌های فرهنگی</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6 border-t-4 border-[#118AB2]">
+                    <h3 class="text-xl font-bold text-[#118AB2] mb-4 flex items-center gap-2">
+                        <span class="text-3xl">🚀</span> فرصت‌ها
+                    </h3>
+                    <ul class="space-y-3 text-gray-300 list-inside">
+                        <li>همجواری با عراق و پتانسیل دیپلماسی فرهنگی</li>
+                        <li>امکان همکاری‌های گسترده بین‌بخشی</li>
+                        <li>ظرفیت فناوری‌های نوین برای ترویج فرهنگ</li>
+                        <li>جذب سرمایه‌گذاری در حوزه فرهنگ و گردشگری</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6 text-center flex flex-col justify-center items-center">
+                    <h3 class="text-xl font-bold text-[#FFD166] mb-4">آمار کلیدی شورا</h3>
+                     <p class="text-sm text-gray-400 mb-4">شورای فرهنگ عمومی استان از ابتدا تا کنون</p>
+                    <div class="text-6xl font-bold text-white">138</div>
+                    <p class="text-lg text-gray-300 mt-2">جلسه برگزار شده</p>
+                    <div class="text-6xl font-bold text-white mt-4">500</div>
+                    <p class="text-lg text-gray-300 mt-2">مصوبه</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="priorities" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#FFD166]">پنج مسئله اصلی و اولویت فرهنگی استان</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-gray-300">
+                بر اساس تحلیل‌های کارشناسی و با اجماع نخبگان، پنج حوزه به عنوان مسائل کلیدی و اولویت‌های اصلی فرهنگی استان تعیین شده‌اند. این اولویت‌ها محور اصلی تمام راهبردها و برنامه‌های اجرایی خواهند بود.
+            </p>
+            <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                <div class="chart-container">
+                    <canvas id="prioritiesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategies" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#FFD166]">راهبردها و برنامه‌های کلان</h2>
+             <p class="text-center max-w-3xl mx-auto mb-8 text-gray-300">
+                برای هر یک از اولویت‌های پنج‌گانه، یک راهبرد اصلی و مجموعه‌ای از برنامه‌های عملیاتی تعریف شده است تا مسیر دستیابی به اهداف مشخص و قابل اجرا باشد.
+            </p>
+            <div class="space-y-6">
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                    <h3 class="font-bold text-xl text-[#06D6A0] mb-3">۱. تقویت هویت اسلامی-ایرانی و بومی-محلی</h3>
+                    <p class="mb-4"><strong class="text-gray-300">راهبرد:</strong> تقویت نهاد خانواده و آموزش و پرورش در انتقال ارزش‌ها.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>تولید محتوای بومی در رسانه‌ها و فضای مجازی</li>
+                        <li>برگزاری جشنواره‌های فرهنگ اقوام</li>
+                        <li>آموزش سواد رسانه‌ای به خانواده‌ها و جوانان</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button class="bg-[#FFD166] hover:bg-[#FFC300] text-[#073B4C] font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateIdeas('تقویت هویت اسلامی-ایرانی و بومی-محلی', 'ideas-output-1')">
+                            ✨ ایده‌های بیشتر ✨
+                        </button>
+                        <button class="bg-[#06D6A0] hover:bg-[#05B48B] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateKPIs('تقویت هویت اسلامی-ایرانی و بومی-محلی', 'kpi-output-1')">
+                            ✨ شاخص‌های ارزیابی ✨
+                        </button>
+                    </div>
+                    <div id="ideas-output-1" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                    <div id="kpi-output-1" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                    <h3 class="font-bold text-xl text-[#FF6B6B] mb-3">۲. حفظ و احیاء هنرهای بومی و صنایع دستی</h3>
+                    <p class="mb-4"><strong class="text-gray-300">راهبرد:</strong> حمایت از هنرمندان و صنعتگران و توسعه بازارچه‌های صنایع دستی.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>ایجاد کارگاه‌های آموزشی و انتقال تجربه</li>
+                        <li>حمایت از ثبت ملی و جهانی آثار فاخر</li>
+                        <li>برگزاری نمایشگاه‌های دائمی و فصلی</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button class="bg-[#FFD166] hover:bg-[#FFC300] text-[#073B4C] font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateIdeas('حفظ و احیاء هنرهای بومی و صنایع دستی', 'ideas-output-2')">
+                            ✨ ایده‌های بیشتر ✨
+                        </button>
+                        <button class="bg-[#06D6A0] hover:bg-[#05B48B] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateKPIs('حفظ و احیاء هنرهای بومی و صنایع دستی', 'kpi-output-2')">
+                            ✨ شاخص‌های ارزیابی ✨
+                        </button>
+                    </div>
+                    <div id="ideas-output-2" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                    <div id="kpi-output-2" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                    <h3 class="font-bold text-xl text-[#118AB2] mb-3">۳. توسعه گردشگری و اقتصاد فرهنگ و هنر</h3>
+                    <p class="mb-4"><strong class="text-gray-300">راهبرد:</strong> توسعه زیرساخت‌های گردشگری فرهنگی و معرفی جاذبه‌ها.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>اجرای کمپین‌های تبلیغاتی ملی و بین‌المللی</li>
+                        <li>ایجاد مسیرهای یکپارچه گردشگری فرهنگی</li>
+                        <li>حمایت از تأسیس و توسعه اقامتگاه‌های بوم‌گردی</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button class="bg-[#FFD166] hover:bg-[#FFC300] text-[#073B4C] font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateIdeas('توسعه گردشگری و اقتصاد فرهنگ و هنر', 'ideas-output-3')">
+                            ✨ ایده‌های بیشتر ✨
+                        </button>
+                        <button class="bg-[#06D6A0] hover:bg-[#05B48B] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateKPIs('توسعه گردشگری و اقتصاد فرهنگ و هنر', 'kpi-output-3')">
+                            ✨ شاخص‌های ارزیابی ✨
+                        </button>
+                    </div>
+                    <div id="ideas-output-3" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                    <div id="kpi-output-3" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                    <h3 class="font-bold text-xl text-[#FFD166] mb-3">۴. کاهش آسیب‌های اجتماعی با رویکرد فرهنگی</h3>
+                    <p class="mb-4"><strong class="text-gray-300">راهبرد:</strong> بهره‌گیری از ظرفیت‌های فرهنگی برای پیشگیری از آسیب‌ها.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>تولید تئاتر و فیلم‌های آموزشی با موضوعات اجتماعی</li>
+                        <li>برگزاری کارگاه‌های مهارت‌های زندگی در مناطق کم‌برخوردار</li>
+                        <li>تقویت سازمان‌های مردم‌نهاد فعال در حوزه اجتماعی</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button class="bg-[#FFD166] hover:bg-[#FFC300] text-[#073B4C] font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateIdeas('کاهش آسیب‌های اجتماعی با رویکرد فرهنگی', 'ideas-output-4')">
+                            ✨ ایده‌های بیشتر ✨
+                        </button>
+                        <button class="bg-[#06D6A0] hover:bg-[#05B48B] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateKPIs('کاهش آسیب‌های اجتماعی با رویکرد فرهنگی', 'kpi-output-4')">
+                            ✨ شاخص‌های ارزیابی ✨
+                        </button>
+                    </div>
+                    <div id="ideas-output-4" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                    <div id="kpi-output-4" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                </div>
+                <div class="bg-slate-800/50 rounded-lg shadow-xl p-6">
+                    <h3 class="font-bold text-xl text-gray-200 mb-3">۵. گسترش فرهنگ ایثار و شهادت</h3>
+                    <p class="mb-4"><strong class="text-gray-300">راهبرد:</strong> تبیین حماسه مرصاد و نقش شهدای استان.</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>برگزاری یادواره‌های شهدا با رویکرد نوآورانه</li>
+                        <li>تولید آثار هنری فاخر (فیلم، مستند، کتاب)</li>
+                        <li>سازماندهی بازدیدهای دانش‌آموزی از یادمان‌های دفاع مقدس</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <button class="bg-[#FFD166] hover:bg-[#FFC300] text-[#073B4C] font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateIdeas('گسترش فرهنگ ایثار و شهادت', 'ideas-output-5')">
+                            ✨ ایده‌های بیشتر ✨
+                        </button>
+                        <button class="bg-[#06D6A0] hover:bg-[#05B48B] text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300" onclick="generateKPIs('گسترش فرهنگ ایثار و شهادت', 'kpi-output-5')">
+                            ✨ شاخص‌های ارزیابی ✨
+                        </button>
+                    </div>
+                    <div id="ideas-output-5" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                    <div id="kpi-output-5" class="mt-4 p-4 bg-slate-700 rounded-md text-gray-300 hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="execution" class="my-16">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#FFD166]">ساختار اجرایی و فرآیند پایش</h2>
+            <p class="text-center max-w-3xl mx-auto mb-8 text-gray-300">
+                موفقیت این نقشه در گرو یک ساختار اجرایی منسجم و سیستم پایش مستمر است. فرآیند زیر، چرخه اجرای برنامه‌ها و ارزیابی نتایج را نشان می‌دهد.
+            </p>
+            <div class="bg-slate-800/50 rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
+                <div class="flowchart-step">
+                    <h3 class="font-bold text-xl text-gray-200 mb-2">تشکیل کمیته‌های تخصصی</h3>
+                    <p class="text-gray-300">برای هر یک از ۵ اولویت، کمیته‌ای با حضور نخبگان، مدیران و فعالان فرهنگی تشکیل می‌شود.</p>
+                </div>
+                <div class="flowchart-step">
+                    <h3 class="font-bold text-xl text-gray-200 mb-2 mt-6">تعیین مسئولیت‌ها</h3>
+                    <p class="text-gray-300">وظایف و مسئولیت‌های هر نهاد و سازمان در اجرای برنامه‌ها به صورت شفاف مشخص می‌گردد.</p>
+                </div>
+                <div class="flowchart-step">
+                    <h3 class="font-bold text-xl text-gray-200 mb-2 mt-6">اجرای برنامه‌ها</h3>
+                    <p class="text-gray-300">برنامه‌های مصوب توسط دستگاه‌های مسئول و با مشارکت بخش خصوصی و مردمی اجرا می‌شوند.</p>
+                </div>
+                 <div class="flowchart-step">
+                    <h3 class="font-bold text-xl text-gray-200 mb-2 mt-6">پایش و ارزیابی مستمر</h3>
+                    <p class="text-gray-300">پیشرفت و اثربخشی برنامه‌ها با شاخص‌های عملکردی سنجیده شده و گزارش‌های دوره‌ای ارائه می‌شود.</p>
+                </div>
+                <div class="flowchart-step">
+                    <h3 class="font-bold text-xl text-gray-200 mb-2 mt-6">مشارکت مردمی</h3>
+                    <p class="text-gray-300">ایجاد سازوکار برای مشارکت حداکثری مردم، تشکل‌ها و بخش خصوصی در تمام مراحل.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-center p-6 mt-8">
+        <p>اینفوگرافیک برش استانی نقشه مهندسی فرهنگی کشور</p>
+        <p class="text-sm text-gray-400 mt-1">تهیه شده بر اساس گزارش اداره کل فرهنگ و ارشاد اسلامی استان کرمانشاه</p>
+        <div class="mt-4">
+             <a href="#swot" class="px-3 py-1 text-gray-300 hover:text-white">تحلیل وضعیت</a>
+             <a href="#priorities" class="px-3 py-1 text-gray-300 hover:text-white">اولویت‌ها</a>
+             <a href="#strategies" class="px-3 py-1 text-gray-300 hover:text-white">راهبردها</a>
+             <a href="#execution" class="px-3 py-1 text-gray-300 hover:text-white">ساختار اجرایی</a>
+        </div>
+    </footer>
+
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+
+        const prioritiesData = {
+            labels: [
+                'تقویت و ترویج هویت اسلامی-ایرانی و بومی-محلی',
+                'حفظ، احیاء و توسعه هنرهای بومی و صنایع دستی استان',
+                'بهره‌گیری از ظرفیت‌های فرهنگی برای توسعه گردشگری و اقتصاد فرهنگ',
+                'کاهش آسیب‌های اجتماعی با رویکرد فرهنگی و افزایش مشارکت',
+                'گسترش فرهنگ ایثار و شهادت، و تبیین نقش کرمانشاه در دفاع مقدس'
+            ].map(label => wrapLabel(label, 16)),
+            datasets: [{
+                label: 'اولویت‌های فرهنگی',
+                data: [10, 10, 10, 10, 10],
+                backgroundColor: [
+                    '#06D6A0',
+                    '#FF6B6B',
+                    '#118AB2',
+                    '#FFD166',
+                    '#F0F0F0'
+                ],
+                borderColor: '#073B4C',
+                borderWidth: 2
+            }]
+        };
+
+        const prioritiesConfig = {
+            type: 'bar',
+            data: prioritiesData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        display: false,
+                        grid: {
+                          display: false
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#E5E7EB',
+                            font: {
+                                size: 12,
+                                family: 'Vazirmatn'
+                            }
+                        },
+                         grid: {
+                          display: false,
+                          borderColor: '#374151'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        bodyFont: {
+                            family: 'Vazirmatn'
+                        },
+                        titleFont: {
+                            family: 'Vazirmatn'
+                        },
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            },
+                            label: function(context) {
+                                return 'یک اولویت اصلی';
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const prioritiesChart = new Chart(
+            document.getElementById('prioritiesChart'),
+            prioritiesConfig
+        );
+
+        async function generateIdeas(priorityText, outputElementId) {
+            const outputDiv = document.getElementById(outputElementId);
+            outputDiv.classList.remove('hidden');
+            outputDiv.innerHTML = '<div class="text-center py-4"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white inline-block"></div><p class="mt-2 text-sm">در حال تولید ایده‌ها...</p></div>';
+
+            let chatHistory = [];
+            const prompt = `با توجه به اولویت فرهنگی '${priorityText}' در استان کرمانشاه، لطفاً پنج ایده اجرایی نوآورانه و عملیاتی برای برنامه‌ها پیشنهاد کنید. هر ایده را در یک بند جداگانه و به صورت خلاصه توضیح دهید.`;
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.innerHTML = `<p class="whitespace-pre-line">${text}</p>`;
+                } else {
+                    outputDiv.innerHTML = '<p class="text-red-400">خطا در دریافت ایده‌ها. لطفاً دوباره تلاش کنید.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching ideas:', error);
+                outputDiv.innerHTML = '<p class="text-red-400">خطا در اتصال به سرور. لطفاً از اتصال اینترنت خود اطمینان حاصل کنید.</p>';
+            }
+        }
+
+        async function generateKPIs(priorityText, outputElementId) {
+            const outputDiv = document.getElementById(outputElementId);
+            outputDiv.classList.remove('hidden');
+            outputDiv.innerHTML = '<div class="text-center py-4"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white inline-block"></div><p class="mt-2 text-sm">در حال تولید شاخص‌ها...</p></div>';
+
+            let chatHistory = [];
+            const prompt = `برای اولویت فرهنگی '${priorityText}' در استان کرمانشاه، لطفاً سه تا پنج شاخص کلیدی عملکرد (KPI) قابل اندازه‌گیری و عملیاتی پیشنهاد کنید. این شاخص‌ها باید به ارزیابی موفقیت برنامه‌های مربوط به این اولویت کمک کنند. هر شاخص را در یک بند جداگانه توضیح دهید.`;
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.innerHTML = `<p class="whitespace-pre-line">${text}</p>`;
+                } else {
+                    outputDiv.innerHTML = '<p class="text-red-400">خطا در دریافت شاخص‌ها. لطفاً دوباره تلاش کنید.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching KPIs:', error);
+                outputDiv.innerHTML = '<p class="text-red-400">خطا در اتصال به سرور. لطفاً از اتصال اینترنت خود اطمینان حاصل کنید.</p>';
+            }
+        }
+    </script>
+
+</body>
+</html>
